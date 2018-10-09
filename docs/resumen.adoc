@@ -1,0 +1,15 @@
+
+= Práctica 3 - Computación Avanzada
+
+== Máster en Ingeniería Informática @ Universidad de La Laguna
+
+== The Secret life of objets
+
+=== Primer Ejercicio
+
+Controlador de cambios dentro del directorio data.
+
+[source, Javascript]
+----
+include::../watcher.js[]
+----

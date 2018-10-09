@@ -1,0 +1,23 @@
+{
+  "name": "oop-ale-ivan",
+  "version": "1.0.0",
+  "description": "Practica 3. Computacion Avanzada",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-MII-CA-1819/oop-ale-ivan.git"
+  },
+  "keywords": [
+    "oop",
+    "javascript"
+  ],
+  "author": "Ivan Garcia, Alejandro Marrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-MII-CA-1819/oop-ale-ivan/issues"
+  },
+  "homepage": "https://github.com/ULL-MII-CA-1819/oop-ale-ivan#readme"
+}
