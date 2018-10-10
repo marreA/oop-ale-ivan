@@ -4,7 +4,7 @@
   "description": "Practica 3. Computacion Avanzada",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,15 @@
   ],
   "author": "Ivan Garcia, Alejandro Marrero",
   "license": "ISC",
+  "devDependencies":{
+    "chai": "^4.2.0",
+    "gulp": "^3.0.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-mocha": "^6.0.0",
+    "gulp-shell": "*",
+    "gulp-util": "*",
+    "mocha": "^5.2.0",
+  },
   "bugs": {
     "url": "https://github.com/ULL-MII-CA-1819/oop-ale-ivan/issues"
   },
