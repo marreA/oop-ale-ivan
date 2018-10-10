@@ -23,7 +23,7 @@
     "gulp-mocha": "^6.0.0",
     "gulp-shell": "*",
     "gulp-util": "*",
-    "mocha": "^5.2.0",
+    "mocha": "^5.2.0"
   },
   "bugs": {
     "url": "https://github.com/ULL-MII-CA-1819/oop-ale-ivan/issues"
