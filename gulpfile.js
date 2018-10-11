@@ -10,7 +10,7 @@ gulp.task("test", () =>
 );
 
 gulp.task('docs', shell.task("asciidoctor docs/resumen.adoc -o docs/index.html"));
-gulp.task('coverage', shell.task("istanbul cover ./node_modules/mocha/bin/_mocha ./test/tests.js && npm run-script coverage && mv ./coverage/ ./docs/"));
+gulp.task('coverage', shell.task("istanbul cover ./node_modules/mocha/bin/_mocha ./test/tests.js && npm run-script coverage && cp -r ./coverage/ ./docs/ && rm -r ./coverage/"));
 
 gulp.task("pre-install", shell.task([
     "sudo gem install asciidoctor"

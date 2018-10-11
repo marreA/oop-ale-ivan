@@ -3,7 +3,7 @@ class UnderlinedCell extends TextCell {
   constructor(inner) {
     if(!inner instanceof TextCell)
       throw new Error("Inner cell must be a cell");
-    super(inner.type, inner.align, inner.text.toString());
+    super(inner.type, inner.align, String(inner.text));
     this.innerCell = inner;
   }
   get minHeight() {
