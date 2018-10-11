@@ -30,5 +30,21 @@ describe('Chapter 6 - The Secret Life of Objects', () => {
       let expected = 'Hello, World! Hello, World! Hello, World! ';
       assert.equal(result, expected);
     });
+    it('minWidth returns "Hello, World!".length', () => {
+      assert.equal(textcell.minWidth, text.length);
+    });
+    it('minHeight returns 1', () => {
+      assert.equal(textcell.minHeight, 1);
+    });
+    it('minHeight returns 1 with "Hello, World!\nHello, World!"', () => {
+      let new_text = "Hello, World!,\nHello, World!";
+      textcell.text = new_text;
+      assert.equal(textcell.minHeight, new_text.length);
+    });
+    it('Draw returns and Hello, World!', () => {
+      textcell.text = text;
+      let result = text.split('');
+      assert.deepEqual(textcell.draw(1, text.length), result);
+    });
   });
 });

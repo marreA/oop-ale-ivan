@@ -37,7 +37,7 @@ class TextCell {
     let result = [];
     for(let i = 0; i < height; i++){
       let line = this.text[i] || " ";
-      result.push(line + repeat(" ", width - line.length));
+      result.push(line + this.repeat(" ", width - line.length));
     }
     return result;
   }
