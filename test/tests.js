@@ -72,10 +72,9 @@ describe('Chapter 6 - The Secret Life of Objects', () => {
       let expected = copy.minWidth;
       assert.equal(underlinedCell.minWidth, expected);
     });
-    // it('drawing UnderlinedCell', () => {
-    //   let expected = textcell.minHeight + 1;
-    //   let width = underlinedCell.innerCell.text.length;
-    //   assert.equal(expected, underlinedCell.draw(width, 1));
-    // });
+    it('drawing UnderlinedCell', () => {
+      let expected = ['Hola, Mundo!', '------------'];
+      assert.deepEqual(underlinedCell.draw(underlinedCell.minWidth, underlinedCell.minHeight), expected);
+    });
   });
 });
