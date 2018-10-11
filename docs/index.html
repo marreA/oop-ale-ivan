@@ -449,10 +449,74 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_autores">Autores</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://alu0100693737.github.io/">Iván García</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://marreA.github.io/">Alejandro Marrero</a></p>
+</div>
+<div class="paragraph">
+<p>TextCell</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-Javascript" data-lang="Javascript">class TextCell {
+  constructor(type, align, text){
+    if(align != TextCell.LEFT &amp;&amp; align != TextCell.CENTER
+      &amp;&amp; align != TextCell.RIGHT)
+      throw new Error(TextCell.ALIGN_ERROR);
+    this.type = type;
+    this.align = align;
+    this.text = text.split("\n");
+  }
+  static get LEFT() {
+    return -1;
+  }
+  static get CENTER() {
+    return 0;
+  }
+  static get RIGHT() {
+    return 1;
+  }
+  static get ALIGN_ERROR() {
+    return 'Align must be:\n -1: left \n 0: center \n 1: right';
+  }
+  get minWidth() {
+    return this.text.reduce((width, line) =&gt; {
+      return Math.max(width, line.length);
+    }, 0);
+  }
+  get minHeight() {
+    return this.text.length;
+  }
+  repeat(string, times) {
+    let result = "";
+    for(let i = 0; i &lt; times; i++)
+      result += string;
+    return result;
+  }
+  draw(width, height) {
+    let result = [];
+    for(let i = 0; i &lt; height; i++){
+      let line = this.text[i] || " ";
+      result.push(line + this.repeat(" ", width - line.length));
+    }
+    return result;
+  }
+}
+
+module.exports = TextCell;</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-11 10:38:37 Hora estßndar romance
+Last updated 2018-10-11 19:08:22 Hora estßndar romance
 </div>
 </div>
 </body>

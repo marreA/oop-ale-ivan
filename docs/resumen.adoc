@@ -6,3 +6,16 @@
 == The Secret life of objets
 
 https://ull-mii-ca-1819.github.io/oop-ale-ivan/coverage/lcov-report/index.html[Coverage]
+
+== Autores
+
+https://alu0100693737.github.io/[Iván García]
+
+https://marreA.github.io/[Alejandro Marrero]
+
+
+TextCell
+[source, Javascript]
+----
+include::../src/textcell.js[]
+----
