@@ -16,9 +16,10 @@
   ],
   "author": "Ivan Garcia, Alejandro Marrero",
   "license": "ISC",
-  "devDependencies":{
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
     "chai": "^4.2.0",
-    "gulp": "^3.0.0",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.5.2",
     "gulp-mocha": "^6.0.0",
     "gulp-shell": "*",

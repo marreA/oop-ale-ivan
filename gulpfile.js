@@ -5,7 +5,7 @@ const mocha = require('gulp-mocha');
 
 gulp.task("default", ["test"]);
 gulp.task("test", () =>
-        gulp.src('./test/tests.js', {read: false})
+        gulp.src('babel-node ./test/tests.js', {read: false})
         .pipe(mocha({reporter: 'nyan'}))
 );
 
