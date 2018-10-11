@@ -1,4 +1,5 @@
 const TextCell = require('../src/textcell');
+const UnderlinedCell = require('../src/underlinedcell');
 const assert = require('assert');
 
 describe('Chapter 6 - The Secret Life of Objects', () => {
@@ -50,6 +51,16 @@ describe('Chapter 6 - The Secret Life of Objects', () => {
       textcell.text = text;
       let result = text.split('');
       assert.deepEqual(textcell.draw(1, text.length), result);
+    });
+  });
+  describe('UnderlinedCell', () => {
+    let underlinedCell = new UnderlinedCell(textcell);
+    it('UnderlinedCell is not null', () => {
+      assert.notEqual(underlinedCell, null);
+    });
+    it('Inner cell is a cell', () => {
+      let result = underlinedCell.innerCell instanceof TextCell;
+      assert.equal(result, true);
     });
   });
 });
