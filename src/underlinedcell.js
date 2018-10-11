@@ -1,19 +1,14 @@
 const TextCell = require('./textcell.js');
 class UnderlinedCell extends TextCell {
-  constructor(inner) {
-    if(!inner instanceof TextCell)
-      throw new Error("Inner cell must be a cell");
-    super(inner.type, inner.align, String(inner.text));
-    this.innerCell = inner;
+  constructor(align, text) {
+    super('underlined', align, text);
   }
   get minHeight() {
-    return this.innerCell.minHeight + 1;
-  }
-  get minWidth() {
-    return this.innerCell.minWidth;
+    let result = super.minHeight;
+    return super.minHeight + 1;
   }
   draw(width, height) {
-    return this.inner.draw(width, height - 1).concat([repeat("-", width)]);
+    return super.draw(width, height - 1).concat([super.repeat("-", width)]);
   }
 }
 

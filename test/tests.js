@@ -54,21 +54,28 @@ describe('Chapter 6 - The Secret Life of Objects', () => {
     });
   });
   describe('UnderlinedCell', () => {
-    let underlinedCell = new UnderlinedCell(textcell);
+    let str = 'Hola, Mundo!';
+    let underlinedCell = new UnderlinedCell(TextCell.LEFT, str);
+    let copy = new TextCell('plain', TextCell.LEFT, str);
     it('UnderlinedCell is not null', () => {
       assert.notEqual(underlinedCell, null);
     });
     it('Inner cell is a cell', () => {
-      let result = underlinedCell.innerCell instanceof TextCell;
+      let result = underlinedCell instanceof TextCell;
       assert.equal(result, true);
     });
     it('minHeight', () => {
-      let expected = textcell.minHeight + 1;
-      assert.equal(expected, underlinedCell.minHeight);
+      let expected = copy.minHeight + 1;
+      assert.equal(underlinedCell.minHeight, expected);
     });
-    // it('minWidth', () => {
-    //   let expected = underlinedCell.minWidth;
-    //   assert.equal(expected, underlinedCell.minWidth);
+    it('minWidth', () => {
+      let expected = copy.minWidth;
+      assert.equal(underlinedCell.minWidth, expected);
+    });
+    // it('drawing UnderlinedCell', () => {
+    //   let expected = textcell.minHeight + 1;
+    //   let width = underlinedCell.innerCell.text.length;
+    //   assert.equal(expected, underlinedCell.draw(width, 1));
     // });
   });
 });
