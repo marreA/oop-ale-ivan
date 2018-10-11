@@ -8,6 +8,11 @@ describe('Chapter 6 - The Secret Life of Objects', () => {
     it('Expected that TextCell exists', () => {
       assert.notEqual(textcell, null);
     });
+    it('Raise an error when align is not left, center or right', () => {
+      let expected = Error;
+      let result = () => new TextCell('plain', 2, text);
+      assert.throws(result, expected);
+    });
     it('Text returns "Hello, World!"', () => {
       assert.equal(textcell.text, "Hello, World!");
     });

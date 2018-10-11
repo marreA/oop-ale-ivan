@@ -2,7 +2,7 @@ class TextCell {
   constructor(type, align, text){
     if(align != TextCell.LEFT && align != TextCell.CENTER
       && align != TextCell.RIGHT)
-      throw new Error(ALIGN_ERROR);
+      throw new Error(TextCell.ALIGN_ERROR);
     this.type = type;
     this.align = align;
     this.text = text.split("\n");
