@@ -19,3 +19,9 @@ TextCell
 ----
 include::../src/textcell.js[]
 ----
+
+Tabla
+[source, Javascript]
+----
+include::../src/Tabla.js[]
+----
