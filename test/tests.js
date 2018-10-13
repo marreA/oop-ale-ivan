@@ -1,6 +1,6 @@
 const TextCell = require("../src/textcell");
 const UnderlinedCell = require("../src/underlinedcell");
-const assert = require('assert');
+const assert = require("assert");
 
 describe("Chapter 6 - The Secret Life of Objects", () => {
   let text = "Hello, World!";
@@ -43,9 +43,9 @@ describe("Chapter 6 - The Secret Life of Objects", () => {
       assert.equal(textcell.minHeight, 1);
     });
     it("minHeight returns 1 with Hello, World!\nHello, World!", () => {
-      let new_text = "Hello, World!,\nHello, World!";
-      textcell.text = new_text;
-      assert.equal(textcell.minHeight, new_text.length);
+      let newText = "Hello, World!,\nHello, World!";
+      textcell.text = newText;
+      assert.equal(textcell.minHeight, newText.length);
     });
     it("Draw returns and Hello, World!", () => {
       textcell.text = text;

@@ -8,7 +8,7 @@ let index = 3;
 
 
 lectorFichero = (nombreFichero) => {
-  return fs.readFileSync(nombreFichero, 'utf8');
+  return fs.readFileSync(nombreFichero, "utf8");
 };
 
 

@@ -57,7 +57,7 @@ colHeights = (filas) => {
         return datos.map(function(fila) {
           return fila[numeroLinea];
         }).join(" ");
-    }
+    };
 
     dibujarFilas = (fila, numlinea) => {
         var content = fila.map(function(elemento, numCol) {
