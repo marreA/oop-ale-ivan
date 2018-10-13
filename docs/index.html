@@ -465,9 +465,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <pre class="highlight"><code class="language-Javascript" data-lang="Javascript">class TextCell {
   constructor(type, align, text){
-    if(align != TextCell.LEFT &amp;&amp; align != TextCell.CENTER
-      &amp;&amp; align != TextCell.RIGHT)
+    if(align !== TextCell.LEFT &amp;&amp; align !== TextCell.CENTER
+      &amp;&amp; align !== TextCell.RIGHT){
       throw new Error(TextCell.ALIGN_ERROR);
+    }
     this.type = type;
     this.align = align;
     this.text = text.split("\n");
@@ -482,7 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
     return 1;
   }
   static get ALIGN_ERROR() {
-    return 'Align must be:\n -1: left \n 0: center \n 1: right';
+    return "Align must be:\n -1: left \n 0: center \n 1: right";
   }
   get minWidth() {
     return this.text.reduce((width, line) =&gt; {
@@ -494,8 +495,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   }
   repeat(string, times) {
     let result = "";
-    for(let i = 0; i &lt; times; i++)
+    for(let i = 0; i &lt; times; i++){
       result += string;
+    }
     return result;
   }
   draw(width, height) {
@@ -521,7 +523,7 @@ const UnderlinedCell = require("../src/underlinedcell");
 
 colWidths = (filas) =&gt; {
   //console.log("Heys" + filas[0].length);
-  if(filas[0].length != undefined) {
+  if(filas[0].length !== undefined) {
     return filas[0].map(function(_, i) {
       return filas.reduce(function(max, row) {
         return Math.max(max, row[i].minWidth);
@@ -575,7 +577,7 @@ colHeights = (filas) =&gt; {
         return datos.map(function(fila) {
           return fila[numeroLinea];
         }).join(" ");
-    }
+    };
 
     dibujarFilas = (fila, numlinea) =&gt; {
         var content = fila.map(function(elemento, numCol) {

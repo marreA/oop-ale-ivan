@@ -3,7 +3,7 @@ const UnderlinedCell = require("../src/underlinedcell");
 
 colWidths = (filas) => {
   //console.log("Heys" + filas[0].length);
-  if(filas[0].length != undefined) {
+  if(filas[0].length !== undefined) {
     return filas[0].map(function(_, i) {
       return filas.reduce(function(max, row) {
         return Math.max(max, row[i].minWidth);

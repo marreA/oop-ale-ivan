@@ -1,7 +1,7 @@
 class TextCell {
   constructor(type, align, text){
-    if(align != TextCell.LEFT && align != TextCell.CENTER
-      && align != TextCell.RIGHT){
+    if(align !== TextCell.LEFT && align !== TextCell.CENTER
+      && align !== TextCell.RIGHT){
       throw new Error(TextCell.ALIGN_ERROR);
     }
     this.type = type;

@@ -12,7 +12,7 @@ lectorFichero = (nombreFichero) => {
 };
 
 
-if(index == process.argv.length) {
+if(index === process.argv.length) {
   //console.log(process.argv[index -1]); //var table = dataTable(input);
   //console.log(lectorFichero(process.argv[index -1]));
   var table = dataTable(JSON.parse(lectorFichero(process.argv[index -1])));
