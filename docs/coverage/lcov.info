@@ -57,8 +57,8 @@ end_of_record
 TN:
 SF:D:\Universidad\Máster Informática\Segundo\Computacion Avanzada\oop-ale-ivan\src\underlinedcell.js
 FN:3,(anonymous_1)
-FN:6,(anonymous_2)
-FN:10,(anonymous_3)
+FN:7,(anonymous_2)
+FN:11,(anonymous_3)
 FNF:3
 FNH:3
 FNDA:1,(anonymous_1)
@@ -66,10 +66,10 @@ FNDA:2,(anonymous_2)
 FNDA:1,(anonymous_3)
 DA:1,1
 DA:4,1
-DA:7,2
 DA:8,2
-DA:11,1
-DA:15,1
+DA:9,2
+DA:12,1
+DA:16,1
 LF:6
 LH:6
 BRF:0
