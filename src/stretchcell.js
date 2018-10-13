@@ -5,12 +5,14 @@ class StretchCell extends TextCell {
     this.width = width;
     this.height = height;
   }
+  //Elige entre los dos width el mayor, super.minWidth min para mostrar texto
   get minWidth() {
     if(this.width > super.minWidth)
       return this.width;
     else
       return super.minWidth;
   }
+  //Elige entre los dos height el mayor, super.minheigth min para mostrar texto
   get minHeight() {
     if(this.height > super.minHeight)
       return this.height;
@@ -18,7 +20,7 @@ class StretchCell extends TextCell {
       return super.minHeight;
     this.height;
   }
-
+  //Elige entre el de la clase y el especificado, el mayor
   draw(width, height) {
     //Elegimos siempre el mayor entre el actual y el que se desea pintar por par
     if(this.height > height && this.width > width)
