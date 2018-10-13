@@ -1,5 +1,5 @@
-const TextCell = require('../src/textcell');
-const UnderlinedCell = require('../src/underlinedcell');
+const TextCell = require("../src/textcell");
+const UnderlinedCell = require("../src/underlinedcell");
 
 colWidths = (filas) => {
   //console.log("Heys" + filas[0].length);
