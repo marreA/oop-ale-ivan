@@ -1,9 +1,10 @@
 
 class TextCell {
   constructor(type, align, text){
-    if(align != TextCell.LEFT && align != TextCell.CENTER
-      && align != TextCell.RIGHT)
+    if(align !== TextCell.LEFT && align !== TextCell.CENTER
+      && align !== TextCell.RIGHT){
       throw new Error(TextCell.ALIGN_ERROR);
+    }
     this.type = type;
     this.align = align;
     this.text = text.split("\n");
@@ -18,7 +19,7 @@ class TextCell {
     return 1;
   }
   static get ALIGN_ERROR() {
-    return 'Align must be:\n -1: left \n 0: center \n 1: right';
+    return "Align must be:\n -1: left \n 0: center \n 1: right";
   }
   get minWidth() {
     return this.text.reduce((width, line) => {
@@ -30,8 +31,9 @@ class TextCell {
   }
   repeat(string, times) {
     let result = "";
-    for(let i = 0; i < times; i++)
+    for(let i = 0; i < times; i++){
       result += string;
+    }
     return result;
   }
   draw(width, height) {

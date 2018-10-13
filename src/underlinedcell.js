@@ -1,9 +1,9 @@
-const TextCell = require('./textcell.js');
+const TextCell = require("./textcell.js");
 class UnderlinedCell extends TextCell {
   constructor(align, text) {
-    super('underlined', align, text);
+    super("underlined", align, text);
   }
-  
+
   get minHeight() {
     let result = super.minHeight;
     return super.minHeight + 1;

@@ -1,9 +1,9 @@
-const TextCell = require('../src/textcell');
-const UnderlinedCell = require('../src/underlinedcell');
+const TextCell = require("../src/textcell");
+const UnderlinedCell = require("../src/underlinedcell");
 
 colWidths = (filas) => {
   //console.log("Heys" + filas[0].length);
-  if(filas[0].length != undefined) {
+  if(filas[0].length !== undefined) {
     return filas[0].map(function(_, i) {
       return filas.reduce(function(max, row) {
         return Math.max(max, row[i].minWidth);
@@ -57,7 +57,7 @@ colHeights = (filas) => {
         return datos.map(function(fila) {
           return fila[numeroLinea];
         }).join(" ");
-    }
+    };
 
     dibujarFilas = (fila, numlinea) => {
         var content = fila.map(function(elemento, numCol) {
