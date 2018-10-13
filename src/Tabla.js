@@ -1,4 +1,5 @@
 const TextCell = require("../src/textcell");
+const RTextCell = require("../src/rtextcell");
 const UnderlinedCell = require("../src/underlinedcell");
 
 colWidths = (filas) => {
@@ -36,7 +37,11 @@ colHeights = (filas) => {
     var datos = data.map(function(fila) {
       return keys.map(function(i) {
         //console.log(i + " " + nombre);
-        return new TextCell(i, TextCell.LEFT, fila[i].toString());
+        var value = fila[i];
+        if (typeof value == "number")
+            return new RTextCell(TextCell.LEFT, value.toString());
+        else
+            return new TextCell(i, TextCell.LEFT, value.toString());
       });
     });
     //console.log("PEPE " + categorias.concat(datos).length);

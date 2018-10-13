@@ -1,7 +1,7 @@
 [
   {"name": "Teide", "height": 3718, "country": "Spain"},
-  {"name": "Kilimanjaro Montaña mágica", "height": 5895, "country": "Tanzania"},
-  {"name": "Everest", "height": 8848, "country": "Nepal País lejano"},
+  {"name": "Kilimanjaro\nMontaña mágica", "height": 5895, "country": "Tanzania"},
+  {"name": "Everest", "height": 8848, "country": "Nepal\nPaís lejano"},
   {"name": "Mount Fuji", "height": 3776, "country": "Japan"},
   {"name": "Mont Blanc", "height": 4808, "country": "Italy/France"},
   {"name": "Vaalserberg", "height": 323, "country": "Netherlands"},
