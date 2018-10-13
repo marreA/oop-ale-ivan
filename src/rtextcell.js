@@ -1,8 +1,8 @@
 const TextCell = require("./textcell.js");
 
 class RTextCell extends TextCell {
-  constructor(align, text) {
-    super("number", align, text);
+  constructor(text) {
+    super("number", TextCell.RIGHT, text);
   }
 
   draw(width, height) {

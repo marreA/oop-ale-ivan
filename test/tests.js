@@ -1,5 +1,6 @@
 const TextCell = require('../src/textcell');
 const UnderlinedCell = require('../src/underlinedcell');
+const RTextCell = require('../src/rtextcell');
 const DataTable = require('../src/Tabla.js');
 const input = require('../inputs/input.json');
 const assert = require('assert');
@@ -78,17 +79,53 @@ describe("Chapter 6 - The Secret Life of Objects", () => {
       let expected = ["Hola, Mundo!", "------------"];
       assert.deepEqual(underlinedCell.draw(underlinedCell.minWidth, underlinedCell.minHeight), expected);
     });
+
   });
+  describe("RTextCell", () => {
+    let str = "9876543";
+    let rtextcelled = new RTextCell(str);
+    console.log(rtextcelled.text);
+    let copy = new TextCell("plain", TextCell.RIGHT, str);
+    it("UnderlinedCell is not null", () => {
+      assert.notEqual(rtextcelled, null);
+    });
+    it("Inner cell is a cell", () => {
+      let result = rtextcelled instanceof TextCell;
+      assert.equal(result, true);
+    });
+    it("minHeight", () => {
+      let expected = copy.minHeight;
+      assert.equal(rtextcelled.minHeight, expected);
+    });
+    it("minWidth", () => {
+      let expected = copy.minWidth;
+      assert.equal(rtextcelled.minWidth, expected);
+    });
+    it("drawing RTextCell", () => {
+      let expected = ["     9876543"];
+      assert.deepEqual(rtextcelled.draw(rtextcelled.minWidth + 5, rtextcelled.minHeight), expected);
+    });
+});
 
   describe('tabla', () => {
       var table = dataTable(input);
+      var copytable = dataTable(input);
+
       var drawing = drawTable(table);
       it('Table is not null', () => {
         assert.notEqual(table, null);
+        assert.notEqual(copytable, null);
       });
       it('Table is not null', () => {
-        let expected = ;
-        assert.typeof(table[0], UnderlinedCell.typeof);
+        assert.notEqual(table, null);
+      });
+      it('colWidths', () => {
+        let expected = copytable.colWidths;
+        assert.equal(table.colWidths, expected);
+      });
+      it('colHeights', () => {
+        let expected = copytable.colHeights;
+        assert.equal(table.colHeights, expected);
       });
   });
 });
