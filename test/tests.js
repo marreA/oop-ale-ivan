@@ -1,5 +1,7 @@
 const TextCell = require('../src/textcell');
 const UnderlinedCell = require('../src/underlinedcell');
+const DataTable = require('../src/Tabla.js');
+const input = require('../inputs/input.json');
 const assert = require('assert');
 
 describe('Chapter 6 - The Secret Life of Objects', () => {
@@ -76,5 +78,17 @@ describe('Chapter 6 - The Secret Life of Objects', () => {
       let expected = ['Hola, Mundo!', '------------'];
       assert.deepEqual(underlinedCell.draw(underlinedCell.minWidth, underlinedCell.minHeight), expected);
     });
+  });
+
+  describe('tabla', () => {
+      var table = dataTable(input);
+      var drawing = drawTable(table);
+      it('Table is not null', () => {
+        assert.notEqual(table, null);
+      });
+      it('Table is not null', () => {
+        let expected = ;
+        assert.typeof(table[0], UnderlinedCell.typeof);
+      });
   });
 });

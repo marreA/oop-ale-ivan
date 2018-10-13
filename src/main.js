@@ -22,3 +22,6 @@ if(index == process.argv.length) {
 } else {
     throw Error("A file must be specified!");
 }
+
+
+//HAY QUE COMPROBAR RETORNOS DE CARRO TB

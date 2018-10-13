@@ -23,11 +23,11 @@ colHeights = (filas) => {
 };
 
   dataTable  = (data) => {
-    //console.log(data);
+
     var keys = Object.keys(data[0]);
     var categorias = keys.map(function(categoria) {
       return keys.map(function(categoria) {
-        return new UnderlinedCell(TextCell.CENTER, categoria.toString());
+        return new UnderlinedCell(TextCell.LEFT, categoria.toString());
         });
     });
     //Magia para evitar error de arrays, conversiones
@@ -36,7 +36,7 @@ colHeights = (filas) => {
     var datos = data.map(function(fila) {
       return keys.map(function(i) {
         //console.log(i + " " + nombre);
-        return new TextCell(i, TextCell.CENTER, fila[i].toString());
+        return new TextCell(i, TextCell.LEFT, fila[i].toString());
       });
     });
     //console.log("PEPE " + categorias.concat(datos).length);
