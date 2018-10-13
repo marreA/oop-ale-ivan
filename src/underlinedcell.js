@@ -3,6 +3,7 @@ class UnderlinedCell extends TextCell {
   constructor(align, text) {
     super('underlined', align, text);
   }
+  
   get minHeight() {
     let result = super.minHeight;
     return super.minHeight + 1;

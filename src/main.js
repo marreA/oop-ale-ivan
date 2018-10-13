@@ -16,9 +16,9 @@ if(index == process.argv.length) {
   //console.log(process.argv[index -1]); //var table = dataTable(input);
   //console.log(lectorFichero(process.argv[index -1]));
   var table = dataTable(JSON.parse(lectorFichero(process.argv[index -1])));
-  //console.log(table);
+  //console.log(table.length);
 
-  drawTable(table);
+  console.log(drawTable(table));
 } else {
     throw Error("A file must be specified!");
 }
