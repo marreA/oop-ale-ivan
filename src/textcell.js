@@ -1,3 +1,4 @@
+
 class TextCell {
   constructor(type, align, text){
     if(align !== TextCell.LEFT && align !== TextCell.CENTER

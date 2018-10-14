@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 const TextCell = require("../src/textcell");
 const UnderlinedCell = require("../src/underlinedcell");
 const Tabla = require("../src/tabla");
 const assert = require("assert");
+=======
+const TextCell = require('../src/textcell');
+const UnderlinedCell = require('../src/underlinedcell');
+const RTextCell = require('../src/rtextcell');
+const StretchCell = require('../src/stretchcell');
+const DataTable = require('../src/Tabla.js');
+const input = require('../inputs/input.json');
+const assert = require('assert');
+>>>>>>> f284aea2fae6460b32027642fb270d9637f46459
 
 describe("Chapter 6 - The Secret Life of Objects", () => {
   let text = "Hello, World!";
@@ -77,5 +87,90 @@ describe("Chapter 6 - The Secret Life of Objects", () => {
       let expected = ["Hola, Mundo!", "------------"];
       assert.deepEqual(underlinedCell.draw(underlinedCell.minWidth, underlinedCell.minHeight), expected);
     });
+
+  });
+  describe("RTextCell", () => {
+    let str = "9876543";
+    let rtextcelled = new RTextCell(str);
+    let copy = new TextCell("plain", TextCell.RIGHT, str);
+    it("UnderlinedCell is not null", () => {
+      assert.notEqual(rtextcelled, null);
+    });
+    it("Inner cell is a cell", () => {
+      let result = rtextcelled instanceof TextCell;
+      assert.equal(result, true);
+    });
+    it("minHeight", () => {
+      let expected = copy.minHeight;
+      assert.equal(rtextcelled.minHeight, expected);
+    });
+    it("minWidth", () => {
+      let expected = copy.minWidth;
+      assert.equal(rtextcelled.minWidth, expected);
+    });
+    it("drawing RTextCell", () => {
+      let expected = ["     9876543"];
+      assert.deepEqual(rtextcelled.draw(rtextcelled.minWidth + 5, rtextcelled.minHeight), expected);
+    });
+});
+
+describe("StretchCell", () => {
+  let str = "Hola, Mundo. Hello World!";
+  let str2 = "Hola Mundo";
+
+  let width = 12; let height = 2;
+  let stretchcelled = new StretchCell(str, width, height);
+  let stretchcelled2 = new StretchCell(str2, width, height);
+  let copy = new TextCell("plain", TextCell.RIGHT, str);
+  it("StretchCell is not null", () => {
+    assert.notEqual(stretchcelled, null);
+  });
+  it("Inner cell is a cell", () => {
+    let result = stretchcelled instanceof TextCell;
+    assert.equal(result, true);
+  });
+  it("minHeight", () => {
+    let expected = height;
+    assert.equal(stretchcelled.minHeight, expected);
+  });
+
+  it("minWidth", () => {
+    let expected = copy.minWidth;// || width;
+    assert.equal(stretchcelled.minWidth, expected);
+
+    let expected2 = width;// || width;
+    assert.equal(stretchcelled2.minWidth, expected2);
+
+  });
+  it("drawing StretchCell 1", () => {
+    let expected = ["Hola Mundo  ", "            ", "            ", "            "];
+      assert.deepEqual(stretchcelled2.draw(3, 4), expected);
+  });
+  it("drawing StretchCell 2", () => {
+    let expected = ['Hola, Mundo. Hello World!', "            ", "            ", "            "];
+      assert.deepEqual(stretchcelled.draw(3, 4), expected);
+  });
+});
+
+  describe('tabla', () => {
+      var table = dataTable(input);
+      var copytable = dataTable(input);
+
+      var drawing = drawTable(table);
+      it('Table is not null', () => {
+        assert.notEqual(table, null);
+        assert.notEqual(copytable, null);
+      });
+      it('Table is not null', () => {
+        assert.notEqual(table, null);
+      });
+      it('colWidths', () => {
+        let expected = copytable.colWidths;
+        assert.equal(table.colWidths, expected);
+      });
+      it('colHeights', () => {
+        let expected = copytable.colHeights;
+        assert.equal(table.colHeights, expected);
+      });
   });
 });

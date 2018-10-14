@@ -20,8 +20,26 @@ TextCell
 include::../src/textcell.js[]
 ----
 
+UnderlLinedCell
+[source, Javascript]
+----
+include::../src/underlinedcell.js[]
+----
+
+RTextCell
+[source, Javascript]
+----
+include::../src/rtextcell.js[]
+----
+
 Tabla
 [source, Javascript]
 ----
-include::../src/Tabla.js[]
+include::../src/tabla.js[]
+----
+
+Main
+[source, Javascript]
+----
+include::../src/main.js[]
 ----
