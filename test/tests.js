@@ -8,32 +8,13 @@ const assert = require("assert");
 
 describe("Chapter 6 - The Secret Life of Objects", () => {
   let text = "Hello, World!";
-  let textcell = new TextCell("plain", TextCell.LEFT, text);
+  let textcell = new TextCell(text);
   describe("TextCell", () => {
     it("Expected that TextCell exists", () => {
       assert.notEqual(textcell, null);
     });
-    it("Raise an error when align is not left, center or right", () => {
-      let expected = Error;
-      let result = () => new TextCell("plain", 2, text);
-      assert.throws(result, expected);
-    });
     it("Text returns Hello, World!", () => {
       assert.equal(textcell.text, "Hello, World!");
-    });
-    it("Align returns left", () => {
-      assert.equal(textcell.align, -1);
-    });
-    it("Align returns center", () => {
-      textcell.align = TextCell.CENTER;
-      assert.equal(textcell.align, 0);
-    });
-    it("Align returns right", () => {
-      textcell.align = TextCell.RIGHT;
-      assert.equal(textcell.align, 1);
-    });
-    it("Type returns plain", () => {
-      assert.equal(textcell.type, "plain");
     });
     it("repeat returns Hello, World! 3 times", () => {
       let result = textcell.repeat("Hello, World! ", 3);
@@ -59,8 +40,8 @@ describe("Chapter 6 - The Secret Life of Objects", () => {
   });
   describe("UnderlinedCell", () => {
     let str = "Hola, Mundo!";
-    let underlinedCell = new UnderlinedCell(TextCell.LEFT, str);
-    let copy = new TextCell("plain", TextCell.LEFT, str);
+    let underlinedCell = new UnderlinedCell(str);
+    let copy = new TextCell(str);
     it("UnderlinedCell is not null", () => {
       assert.notEqual(underlinedCell, null);
     });
@@ -85,7 +66,7 @@ describe("Chapter 6 - The Secret Life of Objects", () => {
   describe("RTextCell", () => {
     let str = "9876543";
     let rtextcelled = new RTextCell(str);
-    let copy = new TextCell("plain", TextCell.RIGHT, str);
+    let copy = new TextCell(str);
     it("UnderlinedCell is not null", () => {
       assert.notEqual(rtextcelled, null);
     });
@@ -113,7 +94,7 @@ describe("StretchCell", () => {
   let width = 12; let height = 2;
   let stretchcelled = new StretchCell(str, width, height);
   let stretchcelled2 = new StretchCell(str2, width, height);
-  let copy = new TextCell("plain", TextCell.RIGHT, str);
+  let copy = new TextCell(str);
   it("StretchCell is not null", () => {
     assert.notEqual(stretchcelled, null);
   });
@@ -145,7 +126,6 @@ describe("StretchCell", () => {
   describe("tabla", () => {
       var table = dataTable(input);
       var copytable = dataTable(input);
-
       var drawing = drawTable(table);
       it("Table is not null", () => {
         assert.notEqual(table, null);

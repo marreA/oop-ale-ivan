@@ -2,7 +2,7 @@ const TextCell = require("./textcell.js");
 
 class RTextCell extends TextCell {
   constructor(text) {
-    super("number", TextCell.RIGHT, text);
+    super(text);
   }
 
   draw(width, height) {
@@ -14,5 +14,7 @@ class RTextCell extends TextCell {
     return result;
   }
 }
-
+const {addMapClass, findClass} = require("./registry-class");
+addMapClass("Number", RTextCell);
+addMapClass("RTextCell", RTextCell);
 module.exports = RTextCell;

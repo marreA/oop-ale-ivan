@@ -1,7 +1,7 @@
 const TextCell = require("./textcell.js");
 class StretchCell extends TextCell {
   constructor(text, width, height) {
-    super("stretchCell", TextCell.CENTER, text);
+    super(text);
     this.width = width;
     this.height = height;
   }
@@ -31,7 +31,8 @@ class StretchCell extends TextCell {
       return super.draw(this.width, height);
     else
       return super.draw(width, height);
+  }
 }
-}
-
+const { addMapClass, findClass } = require("./registry-class");
+addMapClass("StretchCell", StretchCell);
 module.exports = StretchCell;
