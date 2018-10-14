@@ -1,5 +1,6 @@
 const TextCell = require("../src/textcell");
 const UnderlinedCell = require("../src/underlinedcell");
+const Tabla = require("../src/tabla");
 const assert = require("assert");
 
 describe("Chapter 6 - The Secret Life of Objects", () => {
