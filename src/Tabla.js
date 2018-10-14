@@ -31,17 +31,8 @@ colHeights = (filas) => {
     var datos = data.map(function(fila) {
       return keys.map(function(i) {
         let value = fila[i];
-        let {currClass, params} = findClass(value);
+        let {className, currClass, params} = findClass(value);
         return new currClass(...params);
-      //   var value = fila[i];
-      //   if (typeof value == "number") {
-      //     return new RTextCell(fila[i].toString());
-      //   } else if (typeof value == "object") {
-      //     console.log("AQUIIIIIIIIII!, CAMBIAR, reto2, se tiene que llamar con " +  value.type.toString());
-      //     return new TextCell(i, TextCell.LEFT,  value.toString());
-      //   } else {
-      //     return new TextCell(i, TextCell.LEFT,  value.toString());
-      // }
       });
     });
     return categorias.concat(datos);

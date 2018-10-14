@@ -18,4 +18,4 @@ gulp.task("pre-install", shell.task([
 
 gulp.task("reto1", shell.task("node src/main.js ../inputs/input.json"));
 
-gulp.task("reto2", shell.task("node src/main.js ../inputs/input2.json"));
+gulp.task("reto2", shell.task("node --inspect src/main.js ../inputs/input2.json"));

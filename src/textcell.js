@@ -1,7 +1,8 @@
 
 class TextCell {
   constructor(text){
-    this.text = text.split("\n");
+    let txt = String(text);
+    this.text = txt.split("\n");
   }
   get minWidth() {
     return this.text.reduce((width, line) => {
