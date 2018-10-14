@@ -1,12 +1,13 @@
 const TextCell = require("./textcell.js");
 class StretchCell extends TextCell {
   constructor(text, width, height) {
-    console.log(text);
-    if(text instanceof  Object)
+    //console.log(text);
+    if(text instanceof  Object) {
       super(text.text);
-    else
+    } else {
       super(text);
-      
+    }
+
     this.width = width;
     this.height = height;
   }
