@@ -18,7 +18,6 @@ class StretchCell extends TextCell {
       return this.height;
     else
       return super.minHeight;
-    this.height;
   }
   //Elige entre el de la clase y el especificado, el mayor
   draw(width, height) {

@@ -1,17 +1,10 @@
-<<<<<<< HEAD
 const TextCell = require("../src/textcell");
 const UnderlinedCell = require("../src/underlinedcell");
-const Tabla = require("../src/tabla");
+const RTextCell = require("../src/rtextcell");
+const StretchCell = require("../src/stretchcell");
+const DataTable = require("../src/Tabla.js");
+const input = require("../inputs/input.json");
 const assert = require("assert");
-=======
-const TextCell = require('../src/textcell');
-const UnderlinedCell = require('../src/underlinedcell');
-const RTextCell = require('../src/rtextcell');
-const StretchCell = require('../src/stretchcell');
-const DataTable = require('../src/Tabla.js');
-const input = require('../inputs/input.json');
-const assert = require('assert');
->>>>>>> f284aea2fae6460b32027642fb270d9637f46459
 
 describe("Chapter 6 - The Secret Life of Objects", () => {
   let text = "Hello, World!";
@@ -117,7 +110,6 @@ describe("Chapter 6 - The Secret Life of Objects", () => {
 describe("StretchCell", () => {
   let str = "Hola, Mundo. Hello World!";
   let str2 = "Hola Mundo";
-
   let width = 12; let height = 2;
   let stretchcelled = new StretchCell(str, width, height);
   let stretchcelled2 = new StretchCell(str2, width, height);
@@ -135,40 +127,38 @@ describe("StretchCell", () => {
   });
 
   it("minWidth", () => {
-    let expected = copy.minWidth;// || width;
+    let expected = copy.minWidth;
     assert.equal(stretchcelled.minWidth, expected);
-
-    let expected2 = width;// || width;
+    let expected2 = width;
     assert.equal(stretchcelled2.minWidth, expected2);
-
   });
   it("drawing StretchCell 1", () => {
     let expected = ["Hola Mundo  ", "            ", "            ", "            "];
       assert.deepEqual(stretchcelled2.draw(3, 4), expected);
   });
   it("drawing StretchCell 2", () => {
-    let expected = ['Hola, Mundo. Hello World!', "            ", "            ", "            "];
+    let expected = ["Hola, Mundo. Hello World!", "            ", "            ", "            "];
       assert.deepEqual(stretchcelled.draw(3, 4), expected);
   });
 });
 
-  describe('tabla', () => {
+  describe("tabla", () => {
       var table = dataTable(input);
       var copytable = dataTable(input);
 
       var drawing = drawTable(table);
-      it('Table is not null', () => {
+      it("Table is not null", () => {
         assert.notEqual(table, null);
         assert.notEqual(copytable, null);
       });
-      it('Table is not null', () => {
+      it("Table is not null", () => {
         assert.notEqual(table, null);
       });
-      it('colWidths', () => {
+      it("colWidths", () => {
         let expected = copytable.colWidths;
         assert.equal(table.colWidths, expected);
       });
-      it('colHeights', () => {
+      it("colHeights", () => {
         let expected = copytable.colHeights;
         assert.equal(table.colHeights, expected);
       });

@@ -572,68 +572,49 @@ const RTextCell = require("../src/rtextcell");
 const StretchCell = require("../src/stretchcell");
 
 colWidths = (filas) =&gt; {
-  //console.log("Heys" + filas[0].length);
-  //if(filas[0].length !== undefined) {
     return filas[0].map(function(_, i) {
       return filas.reduce(function(max, row) {
         return Math.max(max, row[i].minWidth);
       }, 0);
     });
-  //}
 };
 
 colHeights = (filas) =&gt; {
-    //if(filas[0].length != undefined) {
   return filas.map(function(row) {
     return row.reduce(function(max, cell) {
       return Math.max(max, cell.minHeight);
     }, 0);
 });
-//}
 };
 
   dataTable  = (data) =&gt; {
-
     var keys = Object.keys(data[0]);
     var categorias = keys.map(function(categoria) {
       return keys.map(function(categoria) {
         return new UnderlinedCell(TextCell.LEFT, categoria.toString());
         });
     });
-
     //Magia para evitar error de arrays, conversiones
     categorias = categorias.splice(0, 1);
-
     var datos = data.map(function(fila) {
       return keys.map(function(i) {
         var value = fila[i];
         if (typeof value == "number") {
-
           return new RTextCell(fila[i].toString());
-
         } else if (typeof value == "object") {
           console.log("AQUIIIIIIIIII!, CAMBIAR, reto2, se tiene que llamar con " +  value.type.toString());
-          //HAY QUE MODIFICAR ESTO, SERIA value.type el tipo y apply(value.params);
-          //NO CONSIGO QUE SE LLAME BIEN
-          //return new (value.type)(value.params);
-          //return new value.type.apply(value.params);
           return new TextCell(i, TextCell.LEFT,  value.toString());
         } else {
           return new TextCell(i, TextCell.LEFT,  value.toString());
       }
       });
     });
-    //console.log(categorias.concat(datos).length);
     return categorias.concat(datos);
   };
 
   drawTable = (filas) =&gt; {
-    //console.log(filas.length);
-    //console.log(filas);
     let width = colWidths(filas);
     let height = colHeights(filas);
-
-
     dibujarLinea = (datos, numeroLinea) =&gt; {
         return datos.map(function(fila) {
           return fila[numeroLinea];
@@ -642,40 +623,15 @@ colHeights = (filas) =&gt; {
 
     dibujarFilas = (fila, numlinea) =&gt; {
         var content = fila.map(function(elemento, numCol) {
-            //console.log("Tam " + width + " " + height);
             return elemento.draw(width[numCol], height[numlinea]);
         });
         return content[0].map(function(_, nlinea) {
           return dibujarLinea(content, nlinea);
         }).join("\n");
-        //console.log(pepe);
-        //console.log("Linea nume " + numlinea + " \n " + data[numlinea]);
     }
-    //drawLine(data, 0);
     return filas.map(dibujarFilas).join("\n");
  };
-
-
-
-
-    //for (i = 0; i &lt; data.length; i++) {
-    //    drawLine(data, i);
-    //  }
-  /*  var keys = Object.keys(data[0]);
-    console.log(keys);
-    var datos = data.map(function(fila) {
-      return keys.map(function(i) {
-        var nombre = fila[i];
-        console.log(i + " " + nombre);
-        return nombre;
-        //return new TextCell(i, TextCell.CENTER, nombre.toString());
-      });
-    });*/
-
-
-  createTable = (data) =&gt; {
-
-  };</code></pre>
+  createTable = (data) =&gt; {  };</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -683,35 +639,18 @@ colHeights = (filas) =&gt; {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-Javascript" data-lang="Javascript">const TextCell = require("../src/textcell");
-const UnderlinedCell = require("../src/underlinedcell");
-const DataTable = require("../src/tabla.js");
-//let textcell = new TextCell('plain', TextCell.LEFT, "HOOLA mundo");
-//const input = require("../inputs/input2.json");
+<pre class="highlight"><code class="language-Javascript" data-lang="Javascript">const TextCell = require("./textcell");
+const UnderlinedCell = require("./underlinedcell");
+const DataTable = require("./tabla.js");
 const fs = require("fs");
 let index = 3;
-
-/*lectorFichero = (nombreFichero) =&gt; {
-  return fs.readFileSync(nombreFichero, "utf8");
-};*/
-
 if(index === process.argv.length) {
   const input = require(process.argv[index -1]);
-
-  //console.log(process.argv[index -1]); //var table = dataTable(input);
-  console.log("PEPE");
-  console.log(input);
-  console.log("PACO");
   var table = dataTable(input);
-  //console.log(table.length);
-
   console.log(drawTable(table));
 } else {
     throw Error("A file must be specified!");
-}
-
-
-//HAY QUE COMPROBAR RETORNOS DE CARRO TB</code></pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -719,7 +658,7 @@ if(index === process.argv.length) {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-13 17:02:19 Hora de verano centroeuropea
+Last updated 2018-10-14 09:48:33 Hora estßndar romance
 </div>
 </div>
 </body>
