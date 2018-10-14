@@ -1,5 +1,5 @@
 TN:
-SF:D:\Universidad\Máster Informática\Segundo\Computacion Avanzada\oop-ale-ivan\src\textcell.js
+SF:C:\wamp64\www\complejidad\oop-ale-ivan\src\textcell.js
 FN:3,(anonymous_1)
 FN:7,(anonymous_2)
 FN:12,(anonymous_3)
@@ -8,14 +8,14 @@ FN:22,(anonymous_5)
 FNF:5
 FNH:5
 FNDA:74,(anonymous_1)
-FNDA:38,(anonymous_2)
+FNDA:37,(anonymous_2)
 FNDA:41,(anonymous_3)
 FNDA:61,(anonymous_4)
 FNDA:23,(anonymous_5)
 DA:4,74
 DA:5,74
-DA:8,38
-DA:9,40
+DA:8,37
+DA:9,39
 DA:13,41
 DA:16,61
 DA:17,61
@@ -38,7 +38,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:D:\Universidad\Máster Informática\Segundo\Computacion Avanzada\oop-ale-ivan\src\registry-class.js
+SF:C:\wamp64\www\complejidad\oop-ale-ivan\src\registry-class.js
 FNF:0
 FNH:0
 DA:1,1
@@ -80,7 +80,7 @@ BRF:14
 BRH:6
 end_of_record
 TN:
-SF:D:\Universidad\Máster Informática\Segundo\Computacion Avanzada\oop-ale-ivan\src\underlinedcell.js
+SF:C:\wamp64\www\complejidad\oop-ale-ivan\src\underlinedcell.js
 FN:3,(anonymous_1)
 FN:7,(anonymous_2)
 FN:11,(anonymous_3)
@@ -101,7 +101,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:D:\Universidad\Máster Informática\Segundo\Computacion Avanzada\oop-ale-ivan\src\rtextcell.js
+SF:C:\wamp64\www\complejidad\oop-ale-ivan\src\rtextcell.js
 FN:4,(anonymous_1)
 FN:8,(anonymous_2)
 FNF:2
@@ -127,11 +127,11 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:D:\Universidad\Máster Informática\Segundo\Computacion Avanzada\oop-ale-ivan\src\stretchcell.js
+SF:C:\wamp64\www\complejidad\oop-ale-ivan\src\stretchcell.js
 FN:3,(anonymous_1)
-FN:9,(anonymous_2)
-FN:16,(anonymous_3)
-FN:23,(anonymous_4)
+FN:14,(anonymous_2)
+FN:18,(anonymous_3)
+FN:22,(anonymous_4)
 FNF:4
 FNH:4
 FNDA:2,(anonymous_1)
@@ -141,42 +141,25 @@ FNDA:2,(anonymous_4)
 DA:1,1
 DA:4,2
 DA:5,2
-DA:6,2
+DA:6,0
+DA:8,2
 DA:10,2
-DA:11,1
-DA:13,1
-DA:17,1
-DA:18,1
-DA:20,0
-DA:25,2
-DA:26,0
-DA:28,2
-DA:29,0
-DA:30,2
-DA:31,2
-DA:33,0
-DA:36,1
-DA:37,1
-DA:38,1
-LF:20
-LH:16
-BRDA:10,1,0,1
-BRDA:10,1,1,1
-BRDA:17,2,0,1
-BRDA:17,2,1,0
-BRDA:25,3,0,0
-BRDA:25,3,1,2
-BRDA:25,4,0,2
-BRDA:25,4,1,0
-BRDA:28,5,0,0
-BRDA:28,5,1,2
-BRDA:30,6,0,2
-BRDA:30,6,1,0
-BRF:12
-BRH:7
+DA:11,2
+DA:15,2
+DA:19,1
+DA:24,2
+DA:27,1
+DA:28,1
+DA:29,1
+LF:13
+LH:12
+BRDA:5,1,0,0
+BRDA:5,1,1,2
+BRF:2
+BRH:1
 end_of_record
 TN:
-SF:D:\Universidad\Máster Informática\Segundo\Computacion Avanzada\oop-ale-ivan\src\Tabla.js
+SF:C:\wamp64\www\complejidad\oop-ale-ivan\src\Tabla.js
 FN:7,(anonymous_1)
 FN:8,(anonymous_2)
 FN:15,(anonymous_3)

@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">92.31% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>16/20</span>
+        <span class='fraction'>12/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">58.33% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>7/12</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">92.31% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/20</span>
+        <span class='fraction'>12/13</span>
       </div>
     </div>
   </div>
@@ -72,48 +72,30 @@
 27
 28
 29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+30</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -122,36 +104,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const TextCell = require("./textcell.js");
 class StretchCell extends TextCell {
   constructor(text, width, height) {
-    super(text);
+    console.log(text);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(text instanceof  Object)
+<span class="cstat-no" title="statement not covered" >      super(text.text);</span>
+    else
+      super(text);
+      
     this.width = width;
     this.height = height;
   }
   //Elige entre los dos width el mayor, super.minWidth min para mostrar texto
   get minWidth() {
-    if(this.width &gt; super.minWidth)
-      return this.width;
-    else
-      return super.minWidth;
+    return Math.max(this.width, super.minWidth);
   }
   //Elige entre los dos height el mayor, super.minheigth min para mostrar texto
   get minHeight() {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if(this.height &gt; super.minHeight)
-      return this.height;
-    else
-<span class="cstat-no" title="statement not covered" >      return super.minHeight;</span>
+    return Math.max(this.height, super.minHeight);
   }
   //Elige entre el de la clase y el especificado, el mayor
   draw(width, height) {
     //Elegimos siempre el mayor entre el actual y el que se desea pintar por par
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(this.height &gt; height &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.width &gt; width)</span>
-<span class="cstat-no" title="statement not covered" >      return super.draw(this.width, this.height);</span>
-&nbsp;
-    else <span class="missing-if-branch" title="if path not taken" >I</span>if(this.height &gt; height)
-<span class="cstat-no" title="statement not covered" >      return super.draw(width, this.height);</span>
-    else <span class="missing-if-branch" title="else path not taken" >E</span>if(this.width &gt; width)
-      return super.draw(this.width, height);
-    else
-<span class="cstat-no" title="statement not covered" >      return super.draw(width, height);</span>
+    return super.draw(Math.max(this.width, width), Math.max(this.height, height));
   }
 }
 const { addMapClass, findClass } = require("./registry-class");
@@ -163,7 +136,7 @@ module.exports = StretchCell;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 14 2018 11:36:34 GMT+0100 (Hora estándar romance)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 14 2018 20:32:20 GMT+0200 (Hora de verano centroeuropea)
 </div>
 </div>
 <script src="../prettify.js"></script>

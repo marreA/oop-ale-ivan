@@ -114,13 +114,14 @@ describe("StretchCell", () => {
     assert.equal(stretchcelled2.minWidth, expected2);
   });
   it("drawing StretchCell 1", () => {
-    let expected = ["Hola Mundo  ", "            ", "            ", "            "];
-      assert.deepEqual(stretchcelled2.draw(3, 4), expected);
-  });
-  it("drawing StretchCell 2", () => {
     let expected = ["Hola, Mundo. Hello World!", "            ", "            ", "            "];
       assert.deepEqual(stretchcelled.draw(3, 4), expected);
   });
+  it("drawing StretchCell 2", () => {
+    let expected = ["Hola Mundo  ", "            ", "            ", "            "];
+      assert.deepEqual(stretchcelled2.draw(3, 4), expected);
+  });
+
 });
 
   describe("tabla", () => {
