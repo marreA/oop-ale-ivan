@@ -24,3 +24,5 @@
 - [Asciidoctor](https://asciidoctor.org/)
 
 - [Travis CI](https://travis-ci.org/ULL-MII-CA-1819/01-high-order-function-marreA/branches)
+
+- [Codacy](https://app.codacy.com/project/mii_ca/oop-ale-ivan/dashboard)
