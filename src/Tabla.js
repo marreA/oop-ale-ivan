@@ -2,7 +2,7 @@ const TextCell = require("../src/textcell");
 const UnderlinedCell = require("../src/underlinedcell");
 const RTextCell = require("../src/rtextcell");
 const StretchCell = require("../src/stretchcell");
-const {addMapClass, findClass} = require('./registry-class');
+const {addMapClass, findClass} = require("./registry-class");
 colWidths = (filas) => {
     return filas[0].map(function(_, i) {
       return filas.reduce(function(max, row) {
@@ -31,8 +31,8 @@ colHeights = (filas) => {
     var datos = data.map(function(fila) {
       return keys.map(function(i) {
         let value = fila[i];
-        let {className, currClass, params} = findClass(value);
-        return new currClass(...params);
+        let {className, CurrentClass, params} = findClass(value);
+        return new CurrentClass(...params);
       });
     });
     return categorias.concat(datos);
@@ -54,7 +54,7 @@ colHeights = (filas) => {
         return content[0].map(function(_, nlinea) {
           return dibujarLinea(content, nlinea);
         }).join("\n");
-    }
+    };
     return filas.map(dibujarFilas).join("\n");
  };
   createTable = (data) => {  };
