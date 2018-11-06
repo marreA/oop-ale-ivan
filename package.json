@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ULL-MII-CA-1819/oop-ale-ivan.git"
+    "url": "git+https://github.com/marreA/oop-ale-ivan"
   },
   "keywords": [
     "oop",
@@ -34,7 +34,7 @@
     "mocha-lcov-reporter": "^1.3.0"
   },
   "bugs": {
-    "url": "https://github.com/ULL-MII-CA-1819/oop-ale-ivan/issues"
+    "url": "https://github.com/marreA/oop-ale-ivan/issues"
   },
-  "homepage": "https://github.com/ULL-MII-CA-1819/oop-ale-ivan#readme"
+  "homepage": "https://github.com/marreA/oop-ale-ivan#readme"
 }
