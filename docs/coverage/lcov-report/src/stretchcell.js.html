@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src\stretchcell.js</title>
+    <title>Code coverage report for src/stretchcell.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">91.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/13</span>
+        <span class='fraction'>11/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.31% </span>
+        <span class="strong">91.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/13</span>
+        <span class='fraction'>11/12</span>
       </div>
     </div>
   </div>
@@ -72,10 +72,38 @@
 27
 28
 29
-30</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -86,11 +114,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -102,28 +140,47 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const TextCell = require("./textcell.js");
+/**
+ * StretchCell class
+ * 
+ **/
 class StretchCell extends TextCell {
+  /**
+   * Constructor which builds a new StretchCell
+   * @param {String} text Text of the cell.
+   * @param {number} width Width in columns for the cell.
+   * @param {number} height Height in rows for the cell.
+   **/
   constructor(text, width, height) {
-    console.log(text);
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(text instanceof  Object)
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(text instanceof Object) {
 <span class="cstat-no" title="statement not covered" >      super(text.text);</span>
-    else
+    } else {
       super(text);
-      
+    }
     this.width = width;
     this.height = height;
   }
-  //Elige entre los dos width el mayor, super.minWidth min para mostrar texto
+  /**
+   * Returns the width of the cell
+   * @return {number} Width
+   **/
   get minWidth() {
     return Math.max(this.width, super.minWidth);
   }
-  //Elige entre los dos height el mayor, super.minheigth min para mostrar texto
+  /**
+   * Returns the height of the cell
+   * @return {number} height
+   **/
   get minHeight() {
     return Math.max(this.height, super.minHeight);
   }
-  //Elige entre el de la clase y el especificado, el mayor
+  /**
+   * Draws a StretchCell
+   * @param {number} width Width of the cell.
+   * @param {number} height Height of the cell.
+   * @return {array} StrectchCell as an array.
+   **/
   draw(width, height) {
-    //Elegimos siempre el mayor entre el actual y el que se desea pintar por par
     return super.draw(Math.max(this.width, width), Math.max(this.height, height));
   }
 }
@@ -136,7 +193,7 @@ module.exports = StretchCell;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 14 2018 20:32:20 GMT+0200 (Hora de verano centroeuropea)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 06 2018 17:01:45 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../prettify.js"></script>

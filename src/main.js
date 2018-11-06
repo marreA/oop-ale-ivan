@@ -1,6 +1,6 @@
 const TextCell = require("./textcell");
 const UnderlinedCell = require("./underlinedcell");
-const DataTable = require("./tabla.js");
+const DataTable = require("./Tabla.js");
 const fs = require("fs");
 let index = 3;
 if(index === process.argv.length) {
